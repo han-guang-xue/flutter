@@ -3,7 +3,7 @@
 ### 1.安装flutter
 
 >由于在国内访问Flutter有时可能会受到限制，Flutter官方为中国开发者搭建了临时镜像，大家可以将如下环境变量加入到用户环境变量中：
-<div style="background:#D2EEFB;color:#01579B;font-size:15px;padding:10px;border-radius:10px;"><font color="red">注意:</font>此镜像为临时镜像，并不能保证一直可用，读者可以参考详情请参考[Using Flutter in China](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China)以获得有关镜像服务器的最新动态。</div>
+<div style="background:#D2EEFB;color:#01579B;font-size:15px;padding:10px;border-radius:10px;"><font color="red">注意:</font>此镜像为临时镜像，并不能保证一直可用，读者可以参考详情请参考 [Using Flutter in China](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China) 以获得有关镜像服务器的最新动态。</div>
 
 ##### 环境配置:
 
@@ -24,20 +24,25 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 ![](static/images/flutter_1.png)
 
 ### 4.  安装 Android SDK
->1.先安装 Android Studio,然后打开 Android 配置 SDK 路径, 然后点击 ok
+>1.指定 android sdk 路劲
+```C#
+flutter config --android-sdk  G:\Android\Sdk
+```
+
+>2.先安装 Android Studio,然后打开 Android 配置 SDK 路径, 然后点击 ok
 ![图例1](static/images/android_sdk.png)
 
->然后安装 SDK tools
+>3.然后安装 SDK tools
 ![图例2](static/images/android_sdktools.png)
 
->配置 android sdk 的环境变量
+>4.配置 android sdk 的环境变量
 ![图例3](static/images/android_setting1.png)
 
->flutter doctor --android-licenses 一路执行 y
->运行 flutter -- flutter doctor 根据命令提示执行,
+>5.flutter doctor --android-licenses 一路执行 y
+>6.运行 flutter -- flutter doctor 根据命令提示执行,
 ![图例4](static/images/flutter_doctor.png)
 
->到这一步环境就搭建完了, 可以使用 Android Studio 创建一个 flutter 项目,然后配置虚拟机, 就可以编写代码了
+>7.到这一步环境就搭建完了, 可以使用 Android Studio 创建一个 flutter 项目,然后配置虚拟机, 就可以编写代码了
 
 ### 5.VSCode 配置 flutter
 
@@ -45,5 +50,4 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 ><font color='red'>注:</font>为了方便 VSCode 启动虚拟机 
 >需要配置环境变量:
 ![图例5](static/images/android_AVD_Setting.png)
-
 
