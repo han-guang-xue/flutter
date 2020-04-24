@@ -14,7 +14,7 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 
 ### 2.下载 flutter 并配置全局变量flutter全局命令
 
-![](static/images/flutter_setpath.png)
+![示](static/images/flutter_setpath.png)
 
 ### 3.下载 Dart 和 flutter 下载
 
@@ -25,17 +25,17 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 
 ### 4.  安装 Android SDK
 >1.先安装 Android Studio,然后打开 Android 配置 SDK 路径, 然后点击 ok
-![](static/images/android_sdk.png)
+![图例1](static/images/android_sdk.png)
 
 >然后安装 SDK tools
-![](static/images/android_sdktools.png)
+![图例2](static/images/android_sdktools.png)
 
 >配置 android sdk 的环境变量
-![](static/images/android_setting1.png)
+![图例3](static/images/android_setting1.png)
 
 >flutter doctor --android-licenses 一路执行 y
 >运行 flutter -- flutter doctor 根据命令提示执行,
-![](static/images/flutter_doctor.png)
+![图例4](static/images/flutter_doctor.png)
 
 >到这一步环境就搭建完了, 可以使用 Android Studio 创建一个 flutter 项目,然后配置虚拟机, 就可以编写代码了
 
@@ -44,6 +44,6 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 >[详情查看官网](https://flutterchina.club/get-started/test-drive/#vscode)
 ><font color='red'>注:</font>为了方便 VSCode 启动虚拟机 
 >需要配置环境变量:
-![](static/images/android_AVD_Setting.png)
+![图例5](static/images/android_AVD_Setting.png)
 
 
