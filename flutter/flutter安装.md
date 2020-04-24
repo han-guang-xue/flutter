@@ -39,7 +39,7 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 
 >到这一步环境就搭建完了, 可以使用 Android Studio 创建一个 flutter 项目,然后配置虚拟机, 就可以编写代码了
 
-### 4.VSCode 配置 flutter
+### 5.VSCode 配置 flutter
 
 >[详情查看官网](https://flutterchina.club/get-started/test-drive/#vscode)
 ><font color='red'>注:</font>为了方便 VSCode 启动虚拟机 
