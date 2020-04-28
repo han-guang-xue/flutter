@@ -52,19 +52,26 @@ yum install -y net-tools wget unzip gcc gcc-c++ perl
 
 #### 安装nginx 和 rtmp包
 
+
+如果是在虚拟机中,使用wget 连接失败,可以使用以下方法修改安装源
+
+```shell
+#备份yum源
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   
+#下载阿里源
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+#清空缓存
+yum makecache
+```
+
+切换到home文件下,准备下载压缩文件
+
 ```JSON
 将当前目录切换的 /home 下
 切换的homme目录
 cd /home
-
-如果是在虚拟机中,使用wget 连接失败,可以使用以下方法修改安装源
-备份yum源
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-下载阿里源
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-清空缓存
-yum makecache
 ```
+
 
 
 #### 下载pcre包
@@ -85,13 +92,13 @@ wget http://www.zlib.net/zlib-1.2.11.tar.gz
 wget https://www.openssl.org/source/openssl-1.0.2t.tar.gz
 ```
 
-### 下载 nginx-rtmp-module 包
+#### 下载 nginx-rtmp-module 包
 下载地址 wget https://github.com/arut/nginx-rtmp-module
 ```shell
 wget https://github.com/arut/nginx-rtmp-module/archive/master.zip
 ```
 
-### nginx 下载
+#### nginx 下载
 nginx 下载 http://nginx.org/en/download.html 这里我选择的是 1.17.10 版本 (nginx-1.17.10.tar.gz)
 ```shell
 wget http://nginx.org/download/nginx-1.17.10.tar.gz
@@ -126,12 +133,15 @@ cd nginx-1.17.10        #切换到 解压后的 nginx 目录下 执行以下命�
 
 ./configure --prefix=/usr/local/nginx --with-pcre=/home/pcre-8.44 --with-zlib=/home/zlib-1.2.11 --with-openssl=/home/openssl-1.0.2t --add-module=/home/nginx-rtmp-module-master
 
-make && make install    #编译并安装, 如果执行完这个命令出现如下bug
+make && make install    #编译并安装, 
 
 ```
+
+如果执行完最后一个命令,即编译安装nginx时, 如果出现类似以下bug  
+(可能由于各个版本不一致,会导致报错不一样可以尝试以下方案解决)
 ![图示](static/images/nginxInstallBug.png)
 
-使用以下解决方案
+使用以下解决方案(再nginx目录下依次执行以下命令)
 
 ```shell
  make CFLAGS='-Wno-implicit-fallthrough'    #编译的时候执行该命令
@@ -146,6 +156,14 @@ cd /usr/local/nginx     #切换到该目录
 ```
 
 在浏览器中输入 ip 访问是否安装成功
+如果在局域网内访问ip访问不到, 尝试以下方法解决
+
+```shell
+firewall-cmd --state                #查看liunx防火墙是否开启, 如果开启,执行以下命令
+firewall-cmd --query-port=80/tcp    #查看防火墙是否开启了 80 的端口, 如果没有,再执行以下命令
+firewall-cmd --add-port=80/tcp --permanent      #为80开放永久端口
+firewall-cmd --reload               #重新启动防火墙
+```
 
 
 ### rtmp 配置
@@ -189,7 +207,7 @@ rtmp{
 
             # 也可以使用其它接口进行认证,如果不需要认证, 注解掉即可,
             # 在推流之前,会请求该方法,如果返回状态为 200 则认证成功, 如果返回 500 则认证失败
-            on_publish http://111.229.248.28:80/YCX/userInfo/authSessionKey;
+            # on_publish http://111.229.248.28:80/YCX/userInfo/authSessionKey;
         }
     }
 }
@@ -225,4 +243,22 @@ http {
     }
 }
 ```
+### 检测推流
 
+下载 obs 进行推流测试, 推流的时候可以 到目录 /usr/data/video/hls 查看生成的临时文件
+
+推流地址
+```shell
+http://host:1935/hls/textName       #推流地址
+#http://host:1935/hls/textName?sessionKey={{sessionKey}} #如果需要认证, 可以将sessionKey 添加到这里
+```
+
+拉流地址,可以使用支持 m3u8 格式的播放器测试以下,网上很多有很多下载的,可以下载查看
+```shell
+http://xxx:8080/hls/testName.m3u8
+```
+
+### 微信小程序使用 video 播放m3u8 出现的 bug(无进度条,不从0秒开始播放等)
+
+>很多问题都是因为写入的 m3u8 文件没有结束符导致的, 所以需要再推流结束后给文件加上结束符 "#EXT-X-ENDLIST" 导致的
+m3u8 文件格式 字段属性查看 https://www.cnblogs.com/bugutian/p/4490912.html
