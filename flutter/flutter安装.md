@@ -1,5 +1,9 @@
 # flutter 环境搭建 --widows
 
+>安装前须知,安装前需要又java的开发环境, 最好使用 jdk8 版本,如果电脑是64位的,安装32位的会报错
+查看jdk是否是64位的
+![图示](static/images/jdkSetting.png)
+
 ### 1.安装flutter
 
 >由于在国内访问Flutter有时可能会受到限制，Flutter官方为中国开发者搭建了临时镜像，大家可以将如下环境变量加入到用户环境变量中：
@@ -51,3 +55,11 @@ flutter config --android-sdk  G:\Android\Sdk
 >需要配置环境变量:
 ![图例5](static/images/android_AVD_Setting.png)
 
+
+### 6.创建项目修改
+```JSON
+maven { url 'https://maven.aliyun.com/repository/google' }
+maven { url 'https://maven.aliyun.com/repository/jcenter' }
+maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+```
+![图示](static/images/gradleSetting.png)

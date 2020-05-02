@@ -1,0 +1,55 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 18,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "workbench.colorTheme": "Monokai",
+    "files.autoSave": "onWindowChange",
+    "files.associations": {
+        "*.wxml": "html",
+        "*.wxss": "css",
+        "*.cjson": "jsonc",
+        "*.wxs": "javascript"
+    },
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+    "minapp-vscode.showSuggestionOnEnter": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.home": "H:\\java\\openjdk\\jdk12",
+    "java.configuration.maven.userSettings": "H:\\ABC\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\conf\\settings.xml",
+    "maven.executable.path": "H:\\ABC\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn.cmd",
+    "maven.terminal.useJavaHome": true,
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "H:\\java\\openjdk\\jdk12"
+        }
+    ],
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "http.proxy": "http://127.0.0.1:8080",
+    "vsicons.presets.foldersAllDefaultIcon": true,
+    "vsicons.presets.jsonOfficial": true,
+    "sync.autoDownload": true,
+    "sync.gist": "han-guang-xue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "winopacity.opacity": 235,
+    "dart.debugExternalLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "dart.enableCompletionCommitCharacters": true,
+    "dart.flutterHotRestartOnSave": true,
+    "dart.lineLength": 120,
+    "dart.previewFlutterUiGuides": true,
+    "dart.triggerSignatureHelpAutomatically": true
+}
