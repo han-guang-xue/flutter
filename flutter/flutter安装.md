@@ -27,7 +27,7 @@ FLUTTER_STORAGE_BASE_URL    https://storage.flutter-io.cn
 
 ![](static/images/flutter_1.png)
 
-### 4.  安装 Android SDK
+### 4.  安装 Android SDK(其实这一步骤使用idea也可以装SDK)
 >1.指定 android sdk 路劲
 ```C#
 flutter config --android-sdk  G:\Android\Sdk
@@ -62,4 +62,5 @@ maven { url 'https://maven.aliyun.com/repository/google' }
 maven { url 'https://maven.aliyun.com/repository/jcenter' }
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 ```
+
 ![图示](static/images/gradleSetting.png)
