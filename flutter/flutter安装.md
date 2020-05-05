@@ -62,5 +62,4 @@ maven { url 'https://maven.aliyun.com/repository/google' }
 maven { url 'https://maven.aliyun.com/repository/jcenter' }
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 ```
-
 ![图示](static/images/gradleSetting.png)
