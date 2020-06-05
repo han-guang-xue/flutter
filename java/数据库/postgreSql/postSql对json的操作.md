@@ -4,6 +4,8 @@
 官方文档: https://www.postgresql.org/docs/9.3/functions-json.html;
          http://www.postgres.cn/docs/10/datatype-json.html#JSON-KEYS-ELEMENTS;
 
+json操作符号 http://postgres.cn/docs/10/functions-json.html;
+
 模糊查询:https://juejin.im/entry/586b448761ff4b00578c1b7a
 ####创建表
 
@@ -45,8 +47,7 @@ INSERT INTO public."UFriendsRelation" ("UFID", "UHashId", "UFriends", "UGroupIds
 explain analyze  +  (sql语句);
 ```
 
-#### sql 查询及结果 
-
+#### sql 查询及结果
 ```sql
 -- 查询 UFriends 等于 '[{"name":"张三"}]' json类型的数据
 select * from "UFriendsRelation" where "UFriends" = '[{"name":"张三"}]'::jsonb;
@@ -108,3 +109,18 @@ update "UFriendsRelation" set "UFriends" = (jsonb_set("UFriends",'{0,sex}','fals
 -- 若下标为0 的数组没有name这个属性,就会给这个数组追加该属性
 update "UFriendsRelation" set "UFriends" = (jsonb_set("UFriends",'{0,name}','"张三"'::jsonb,true)) where "UFID" = 4;
 ```
+
+
+### 应用操作
+```sql
+-- 可以将某个表根据条件查出来 作为其它关联表中的字段json对象的数据
+select row_to_json("UFriendsRelation") "Content" from "UFriendsRelation";
+
+-- 可以将某个表根据条件查出来 作为其它关联表中的字段json数组对象的数据
+select jsonb_build_array(row_to_json("UFriendsRelation")) "Content" from "UFriendsRelation";       
+```
+
+
+
+##Mabatis文件与数据库之间数据类型的映射
+
