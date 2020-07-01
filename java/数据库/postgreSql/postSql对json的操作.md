@@ -117,7 +117,19 @@ update "UFriendsRelation" set "UFriends" = (jsonb_set("UFriends",'{0,name}','"�
 select row_to_json("UFriendsRelation") "Content" from "UFriendsRelation";
 
 -- 可以将某个表根据条件查出来 作为其它关联表中的字段json数组对象的数据
-select jsonb_build_array(row_to_json("UFriendsRelation")) "Content" from "UFriendsRelation";       
+select jsonb_build_array(row_to_json("UFriendsRelation")) "Content" from "UFriendsRelation";    
+
+-- 将一个结果集查询出来并和成多个对象
+select array_to_string(array_agg(row_to_json(t1)),',')  from(
+ select "PHashId" from "DPRelations" where "DHashId" = '471d0e503b422070'
+)t1;
+
+-- 将多个对象转化成数组格式的jsonb返回
+select ('['||"PHashId"||']')::jsonb  from(
+    select array_to_string(array_agg(row_to_json(t1)),',') "PHashId" from(
+        select "PHashId" from "DPRelations" where "DHashId" = '471d0e503b422070'
+    )t1
+)t2;
 ```
 
 
