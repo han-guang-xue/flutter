@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./text.css" />
+</head>
+
+<body class="box" id="box">
+    <div class="b1" id="b1">
+
+    </div>
+</body>
+<script>
+    const margin = 10;
+    const count = 10;
+    var doc = document.getElementById("box");
+    console.log([doc])
+    var doc1 = [doc];
+    var width = doc1['0']['clientWidth'];
+    var height = doc1['0']['clientHeight'];
+    console.log(width)
+    console.log(height)
+    console.log([document.body])
+    var width1 = width / count - margin * 2;
+    var height1 = height / count - margin * 2;
+    window.onload = function() {
+        var str = "";
+        for (var i = 0, j = 0; i < 1000; i++) {
+            str += "<div class='b2' style='width:" +
+                width1 + "px;height:" +
+                height1 + "px;margin:" +
+                margin + "px;'></div>";
+        }
+        document.getElementById("b1").innerHTML = str;
+    }
+</script>
+
+</html>

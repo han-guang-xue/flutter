@@ -6,6 +6,10 @@
 
 ### 1.安装flutter
 
+```shell
+git clone https://github.com/flutter/flutter.git; ##下载到最新版本
+```
+
 >由于在国内访问Flutter有时可能会受到限制，Flutter官方为中国开发者搭建了临时镜像，大家可以将如下环境变量加入到用户环境变量中：
 <div style="background:#D2EEFB;color:#01579B;font-size:15px;padding:10px;border-radius:10px;"><font color="red">注意:</font>此镜像为临时镜像，并不能保证一直可用，读者可以参考详情请参考 [Using Flutter in China](https://github.com/flutter/flutter/wiki/Using-Flutter-in-China) 以获得有关镜像服务器的最新动态。</div>
 
@@ -63,3 +67,4 @@ maven { url 'https://maven.aliyun.com/repository/jcenter' }
 maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 ```
 ![图示](static/images/gradleSetting.png)
+

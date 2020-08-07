@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "nice"
+            }
+        })
+    </script>
+
+    <div id="app2">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+    </div>
+    <script>
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                message: "数据加载与" + new Date().toLocaleDateString()
+            }
+        })
+    </script>
+
+    <div id="app3">
+        <ul v-for="(item, index) in products" :key="index">
+            <todo-item v-bind:todo="item"></todo-item>
+        </ul>
+
+        <h3>总数商品数 {{toSum}}</h3>
+    </div>
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li> <span v-html="todo.name"></span> <button @click="todo.num += 1">+</button><input v-model.number="todo.num" type="number" min="0" style="width: 50px;" /><button v-if="todo.num>0" @click="todo.num -= 1">-</button></li>'
+        })
+
+        var app3 = new Vue({
+            el: "#app3",
+            data: {
+                products: [{
+                    name: "<span style='color:red;'>红色</span>橘子",
+                    num: 0
+                }, {
+                    name: "香蕉",
+                    num: 20
+                }, {
+                    name: "黄瓜",
+                    num: 10
+                }],
+            },
+            methods: {
+
+            },
+            computed: {
+                toSum() {
+                    return this.products.reduce((sum, item) => {
+                        return sum + item.num
+                    }, 0)
+                }
+            },
+            updated() {
+
+            },
+        })
+    </script>
+</body>
+
+</html>
