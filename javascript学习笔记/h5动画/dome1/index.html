@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="400" style="border: 1px solid red;"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var cvsCtx = canvas.getContext("2d");
+        var image = new Image();
+        image.src = "image/5b56be53f3d74.jpg";
+        image.onload = function() {
+            cvsCtx.drawImage(image, 10, 10, 400, 250);
+        };
+        // 圆形
+        cvsCtx.save();
+        cvsCtx.beginPath();
+        cvsCtx.translate(80, 50);
+        cvsCtx.arc(100, 100, 150, 0, Math.PI * 2, true);
+        cvsCtx.fillStyle = "pink";
+        cvsCtx.fill()
+        cvsCtx.closePath();
+        cvsCtx.restore();
+        cvsCtx.clip();
+    </script>
+</body>
+
+</html>
