@@ -43,3 +43,28 @@ function createWindow() {
 app.whenReady().then(createWindow)
 ```
 
+cnpm
+
+https://blog.csdn.net/u014540814/article/details/78777961
+
+cnpm install -g electron
+
+> npm 安装 安装源修改为阿里巴巴
+
+npm install -gd express --registry=http://registry.npm.taobao.org
+
+> 永久设置
+
+npm config set registry http://registry.npm.taobao.org
+
+> .npmrc
+
+electron_mirror = https://npm.taobao.org/mirrors/electron/
+
+> npm install -g yrm  #包管理
+>
+> yrm use taobao
+>
+> yrm add aliyun http://maven.aliyun.com/nexus/content/groups/public
+>
+> yrm test aliyun

@@ -42,12 +42,6 @@
 
 + table
 
-+ grid
-
-+ flex
-
-
-
 ## 作用于子元素
 
 -moz代表baifirefox浏览器私有属性；

@@ -1,0 +1,44 @@
+
+# git 命令
+
+111.229.248.28
+192.168.2.23
+39.99.215.127
+47.11.162.176
+
+
+url=jdbc:postgresql://192.168.2.23:5432/ycx3dot0
+username=postgres
+password=xingshu123
+
+#url=jdbc:postgresql://47.111.162.176:5432/ycx3dot0
+#username=postgres
+#password=postgres
+
+#url=jdbc:postgresql://47.111.162.176:5432/ycx3dot0
+#username=postgres
+#password=postgres
+
+
+systemctl
+su - postgres
+psql
+\l
+
+
+
+
+----------------mysql--------------
+!#Ha19841984*
+
+
+
+
+------------------项目笔记----------------
+文件: `.gitignore` 对不需要的目录或是文件忽略上传
+文件: `.gitmodules`  https://blog.csdn.net/qq_27295403/article/details/80486116
+文件: `.gitattributes` 文件中的一行定义一个路径的若干个属性
+
+文件: `eslintrc.js` Vue的配置文件
+
+
