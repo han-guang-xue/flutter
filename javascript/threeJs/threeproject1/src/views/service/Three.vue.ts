@@ -17,7 +17,7 @@ export default defineComponent({
 
     methods: {
         getCanvas() {
-            
+
         },
         initData() {
            
@@ -30,10 +30,11 @@ export default defineComponent({
     //加载html 页面之前
     created() {
         console.log('created');
+
     },
     //架子啊html 页面之后执行
     mounted() {
-        console.log('mounted');
+        console.log('mounted');        
     },
     
 })

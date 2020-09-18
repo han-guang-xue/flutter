@@ -1,6 +1,7 @@
 <template>
   <div class="reactive">
-      <input v-model="rtitle"  @input="setTitle" type="text" placeholder="请输入标题(title)" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      <input type="text" placeholder="请输入标题(title)" 
+        class="form-control" id="basic-url" aria-describedby="basic-addon3">
         {{message}}
   </div>
 </template>
