@@ -23,7 +23,8 @@ export default defineComponent({
 
     methods: {
         setTitle(e) {
-            console.error(e)
+            console.error(e.target.value);
+            this.$store.commit('setName', e.target.value);
         }
     },
 

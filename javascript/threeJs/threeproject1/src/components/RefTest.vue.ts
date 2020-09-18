@@ -7,5 +7,11 @@ export default defineComponent({
         return {
             toDay: new Date().toLocaleDateString(),
         }
+    },
+
+    computed: {
+        count() {
+            return this.$store.state.name;
+        }
     }
 })
