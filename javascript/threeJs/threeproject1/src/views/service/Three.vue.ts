@@ -1,6 +1,7 @@
 import { defineComponent } from 'vue';
 import RefTest from '../../components/RefTest.vue';
 import ReactiveTest from '../../components/ReactiveTest.vue';
+
 export default defineComponent({
 
     components: {
@@ -10,8 +11,8 @@ export default defineComponent({
 
     data() {
         return {
-            name : '韩广学',
-            title: {value : '我爱人民, 人民也爱我'}
+            name : 'sadf',
+            title: {value : '我爱人民, 人民也爱我'},
         }
     },
 
