@@ -2,10 +2,11 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     props: {
         title: {
-            type: String,
+            type: Object,
             required: true
         },
     },
+
     data() {
         return {
             message: '这个 Vue 是真滴难学',
@@ -29,11 +30,11 @@ export default defineComponent({
     mounted() {
         let that = this;
         const ele = document.getElementById("basic-url");
-        ele['value'] = this.title;
+        ele['value'] = this.title.value;
         ele? ele.oninput = function(){
             console.log(this['value']);
             that.message = this['value'];
-            that.title = this['value'];
+            that.title.value = this['value'];
         } : null;
     }
 })

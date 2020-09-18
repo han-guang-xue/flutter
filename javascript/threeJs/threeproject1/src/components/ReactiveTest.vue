@@ -2,6 +2,9 @@
   <div class="reactive">
       <input type="text" placeholder="请输入标题(title)" 
         class="form-control" id="basic-url" aria-describedby="basic-addon3">
+
+       <input v-model="title.value" type="text" placeholder="请输入标题(title)" 
+        class="form-control"  aria-describedby="basic-addon3">
         {{message}}
   </div>
 </template>

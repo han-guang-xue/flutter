@@ -11,7 +11,7 @@ export default defineComponent({
     data() {
         return {
             name : '韩广学',
-            title: '我爱人民, 人民也爱我'
+            title: {value : '我爱人民, 人民也爱我'}
         }
     },
 
