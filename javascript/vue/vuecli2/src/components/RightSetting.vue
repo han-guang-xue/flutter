@@ -2,7 +2,7 @@
   <div class="center">
       0
       <p>{{message}}</p>
-
+ 
       结果: {{count}}
   </div>
 </template>
