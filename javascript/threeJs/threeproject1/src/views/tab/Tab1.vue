@@ -4,6 +4,7 @@
     <h1>good nice {{ title }}</h1>
 
     <slot name="slot1"></slot>
+    <slot></slot>
   </div>
 </template>
 

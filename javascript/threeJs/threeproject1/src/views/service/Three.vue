@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="box">
-      <ref-test :title="title"></ref-test>
+      <ref-test :title="title" :todolength="todoLength"></ref-test>
       <div class="bcgcanvas">
         <!-- <canvas id="myCanvas"></canvas> -->
         <keep-alive name="bounce">
@@ -9,7 +9,7 @@
             <component :is="TabName">
               <!-- <i style="color:black;">我是默认插槽 nice </i> -->
               <template v-slot:slot1>
-                <i style="color:#ffffff;">我是命名的插槽 </i>
+                <i style="color:#ffffff;">我是命名的插槽 {{todoLength}}</i>
               </template>
               <template v-slot:default>
                 <i style="color:black;">我是默认插槽 </i>
@@ -17,8 +17,6 @@
             </component>
           </transition>
         </keep-alive>
-
-        
       </div>
       <reactive-test :title="title" ></reactive-test>
     </div>

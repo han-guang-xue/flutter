@@ -27,7 +27,9 @@ export default defineComponent({
             '</div>',
         }
     },
-
+    provide: {
+        todoLength: 1,
+    },
     methods: {
         getCanvas() {
 

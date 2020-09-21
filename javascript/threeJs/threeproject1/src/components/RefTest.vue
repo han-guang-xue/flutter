@@ -4,6 +4,8 @@
       <p>{{toDay}}</p>
       <p>vuex 状态管理</p>
       <button>count: {{count}}</button>
+
+      <h4>todoLength: {{todoLength}}</h4>
   </div>
 </template>
 <script lang="ts" src="./RefTest.vue.ts"></script>
