@@ -3,15 +3,18 @@
     <div class="box">
       <ref-test :title="title"></ref-test>
       <div class="bcgcanvas">
-        <canvas id="myCanvas"></canvas>
+        <!-- <canvas id="myCanvas"></canvas> -->
+        <keep-alive>
+          <component :is="TabName"></component>
+        </keep-alive>
       </div>
       <reactive-test :title="title" ></reactive-test>
     </div>
 
     <div class="button-box">
-      <button type="button" class="btn btn-default">Default</button>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-default" @click="selectTab('Tab1')">Tab1</button>
+      <button type="button" class="btn btn-primary" @click="selectTab('Tab2')">Tab2</button>
+      <button type="button" class="btn btn-success" @click="selectTab('Tab3')">Tab3</button>
       <button type="button" class="btn btn-info">Info</button>
       <button type="button" class="btn btn-warning">Warning</button>
       <button type="button" class="btn btn-danger">Danger</button>
@@ -19,6 +22,7 @@
     </div>
     
     <input v-model="title.value" type="text" placeholder="请输入标题(title)" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    <div id="gameType" @click="changeGameType">ddd</div>
 </div>
 </template>
 
