@@ -25,7 +25,7 @@ export default defineComponent({
             '    </div><div name="slot1">'+
             '    <i style="color:black;">我是插槽 </i>'+
             '</div>',
-    }
+        }
     },
 
     methods: {

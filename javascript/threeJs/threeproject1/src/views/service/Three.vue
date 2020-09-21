@@ -4,17 +4,21 @@
       <ref-test :title="title"></ref-test>
       <div class="bcgcanvas">
         <!-- <canvas id="myCanvas"></canvas> -->
-        <keep-alive>
-          <component :is="TabName">
-            <!-- <i style="color:black;">我是默认插槽 nice </i> -->
-            <template v-slot:slot1>
-              <i style="color:#ffffff;">我是命名的插槽 </i>
-            </template>
-            <template v-slot:default>
-              <i style="color:black;">我是默认插槽 </i>
-            </template>
-          </component>
+        <keep-alive name="bounce">
+          <transition name="bounce">
+            <component :is="TabName">
+              <!-- <i style="color:black;">我是默认插槽 nice </i> -->
+              <template v-slot:slot1>
+                <i style="color:#ffffff;">我是命名的插槽 </i>
+              </template>
+              <template v-slot:default>
+                <i style="color:black;">我是默认插槽 </i>
+              </template>
+            </component>
+          </transition>
         </keep-alive>
+
+        
       </div>
       <reactive-test :title="title" ></reactive-test>
     </div>
@@ -63,4 +67,34 @@
   height: 100%;
   background: #FFC10756;
 }
+
+// 动画实现
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+}
+// .bounce-leave-active {
+//   animation: bounce-leave 0.5s reverse;
+// }
+// @keyframes bounce-leave {
+//   0% {
+//     opacity: 1;
+//     transform: translateY(0px);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateY(-100px);
+//   }
+// }
 </style>
