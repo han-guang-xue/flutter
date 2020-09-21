@@ -20,7 +20,12 @@ export default defineComponent({
             name : 'sadf',
             title: {value : '我爱人民, 人民也爱我'},
             TabName: 'Tab1',
-        }
+            solt1 : '<div name="slot1">'+
+            '  <i style="color:black;">我是插槽 </i>'+
+            '    </div><div name="slot1">'+
+            '    <i style="color:black;">我是插槽 </i>'+
+            '</div>',
+    }
     },
 
     methods: {

@@ -2,6 +2,9 @@
   <div class="tab1">
     hello, 我是 tab3
     <h1>good nice  {{ title }}</h1>
+
+    <slot></slot>
+
   </div>
 </template>
 

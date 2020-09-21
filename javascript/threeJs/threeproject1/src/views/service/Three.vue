@@ -5,7 +5,15 @@
       <div class="bcgcanvas">
         <!-- <canvas id="myCanvas"></canvas> -->
         <keep-alive>
-          <component :is="TabName"></component>
+          <component :is="TabName">
+            <!-- <i style="color:black;">我是默认插槽 nice </i> -->
+            <template v-slot:slot1>
+              <i style="color:#ffffff;">我是命名的插槽 </i>
+            </template>
+            <template v-slot:default>
+              <i style="color:black;">我是默认插槽 </i>
+            </template>
+          </component>
         </keep-alive>
       </div>
       <reactive-test :title="title" ></reactive-test>
