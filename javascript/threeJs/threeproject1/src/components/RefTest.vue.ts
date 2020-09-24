@@ -1,8 +1,9 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
-    props:{
+    props: {
         title: String,
     },
+
     data() {
         return {
             toDay: new Date().toLocaleDateString(),

@@ -4,6 +4,7 @@ import ReactiveTest from '../../components/ReactiveTest.vue';
 import Tab1 from '../tab/Tab1.vue';
 import Tab2 from '../tab/Tab2.vue';
 import Tab3 from '../tab/Tab3.vue';
+import Tab4 from '../tab/Tab4.vue';
 
 export default defineComponent({
 
@@ -13,18 +14,14 @@ export default defineComponent({
         Tab1,
         Tab2,
         Tab3,
+        Tab4,
     },
 
     data() {
-        return {
+        return { 
             name : 'sadf',
             title: {value : '我爱人民, 人民也爱我'},
-            TabName: 'Tab1',
-            solt1 : '<div name="slot1">'+
-            '  <i style="color:black;">我是插槽 </i>'+
-            '    </div><div name="slot1">'+
-            '    <i style="color:black;">我是插槽 </i>'+
-            '</div>',
+            TabName: 'Tab1'
         }
     },
     provide: {

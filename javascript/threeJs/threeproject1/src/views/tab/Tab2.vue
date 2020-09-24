@@ -3,8 +3,7 @@
     hello, 我是 tab2
     <h1>good nice  {{ title }}</h1>
 
-    <slot></slot>
-
+    <slot />
   </div>
 </template>
 
