@@ -7,5 +7,6 @@
         "printWidth": 100,
         "singleQuote": false
     },
-    "vue3snippets.enable-compile-vue-file-on-did-save-code": false
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
