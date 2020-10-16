@@ -1,3 +1,4 @@
+# JVM 内存模型笔记
 > JVM 官方文档
 >
 > + https://docs.oracle.com/en/java/javase/15/vm/java-virtual-machine-technology-overview.html#GUID-982B244A-9B01-479A-8651-CB6475019281
@@ -14,10 +15,10 @@
 > + https://www.processon.com/diagraming/5f814c8c5653bb06eff357ee
 >
 > JVisualVM 调试工具(安装插件 Visual GC) 调试 gc
-
 > JVM 参数
 >
 > https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html (见官方文档)
 
-## class_1
+# Java 中的 synchronized
+
 
