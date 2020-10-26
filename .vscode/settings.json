@@ -8,5 +8,13 @@
         "singleQuote": false
     },
     "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "cmath": "cpp",
+        "*.tcc": "cpp"
+    }
 }
