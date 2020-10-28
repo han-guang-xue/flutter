@@ -16,5 +16,6 @@
         "*.wxs": "javascript",
         "cmath": "cpp",
         "*.tcc": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": true
 }

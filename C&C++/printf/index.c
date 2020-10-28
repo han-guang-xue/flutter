@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
     printf("n %n ccc\n", 10.0); // 
     printf("\n"); // 以十六进制形式输出无符号整数(不输出前缀OX)
     printf("x %x \n", 10.0); // 以十六进制形式输出无符号整数(不输出前缀OX)
-    printf("X %x \n", 10.0); // 同上
+    printf("X %X \n", 10.0); // 同上
     
     return 0;
 }

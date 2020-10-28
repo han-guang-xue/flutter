@@ -12,12 +12,25 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+
+char * strcopy(char const *tarstr) {
+    char * newstr;
+    newstr = malloc(strlen(tarstr) * 1);
+
+    if(newstr != NULL) {
+        strcpy(newstr, tarstr);
+    }
+    return newstr;
+}
 
 int main(int argc, char const *argv[])
-{
-    calloc()
-    realloc()
-    malloc()
+{   
+    char *str = "ajhdsjfhajjsdfjadhfjahdjfjadhf,ajshdfjhajsdkfjasdjfhajsdfh!!!!!~~~";
+    printf("%s \n", strcopy(str));    
+    printf("%s \n", str);    
     return 0;
 }
+
 
