@@ -156,7 +156,7 @@ public class Test {
 
 ### 3.5 大纲
 
-![image-20201021140734596](D:\MINTOOL\dostop\mine\flutter\java\阿里P7级Java架构师课程笔记\sync锁.assets\image-20201021140734596.png)
+![image-20201021140734596](sync锁.assets\image-20201021140734596.png)
 
 ## 4. 锁重入
 
@@ -169,8 +169,6 @@ public class Test {
 | 重量级锁 |          |                     |
 
 > lock record 第一次记录重入次数,  会将markword 拷贝到 DisplayedMarkWord中, 第二次记录重入次数会新增一个 空的 LR;
-
-
 
 
 
