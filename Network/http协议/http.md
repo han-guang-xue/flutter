@@ -13,3 +13,7 @@ len: 发送数据包的长度
 
 ## http协议抓包
 ![](image/%E6%8A%93%E5%8C%85http.png)
+
+
+![dd](https://images.cnblogs.com/cnblogs_com/han-guang-xue/1875855/o_201104065954md-http.png)
+
