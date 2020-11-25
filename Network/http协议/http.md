@@ -1,3 +1,6 @@
+## TCP和UDP原理视频
+https://www.bilibili.com/video/av79717533?p=5
+
 ## TCP抓包名词解释与逻辑图
 
 SYN: 表示建立连接，
@@ -15,5 +18,8 @@ len: 发送数据包的长度
 ![](image/%E6%8A%93%E5%8C%85http.png)
 
 
-![dd](https://images.cnblogs.com/cnblogs_com/han-guang-xue/1875855/o_201104065954md-http.png)
+
+## 应用层到链路层的封装
+![](image/%E6%95%B0%E6%8D%AE%E5%B0%81%E8%A3%85.png)
+
 
