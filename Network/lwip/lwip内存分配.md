@@ -1,12 +1,17 @@
 ### lwip 内存分配
 
 **LWIP内存分配**
+
 `内存堆`:其优点就是内存浪费小，比较简单，适合用于小内存的管理，其缺点就是如果频繁的动态分配和释放，可能会造成严重的内存碎片，如果在碎片情况严重的话，可能会导致内存分配不成功。
+
 `内存池`:内存池的特点是预先开辟多组固定大小的内存块组织成链表，实现简单，分配和回收速度快，不会产生内存碎片，但是大小固定，并且需要预估算准确。
 
 #### 堆内存
+
 文件名 mem.c
+
 **初始化**
+
 
 ```c
 struct heap_mem
@@ -16,6 +21,7 @@ struct heap_mem
     rt_size_t next, prev; /* 记录相邻内存块的地址 */
 };
 ```
+
 
 ```c
 // rt_system_heap_init
@@ -74,17 +80,25 @@ void rt_system_heap_init(void *begin_addr, void *end_addr)
     lfree = (struct heap_mem *)heap_ptr;
 }
 ```
+
 **分配**
+
 `rt_malloc(rt_size_t size);` 从lfree指向的内存块及之后找出没有被使用的内存块,并修改lfree(加锁)
 
+
 **释放**
+
 
 `rt_free(void *rmem);` 将需要释放的内存块地址放回堆内存中, 并更新lfree(加锁)
 
 #### 内存池
+
 文件名 memp.c
 
+
 **初始化**
+
+
 ```c
 //初始化内存池 memp_pools 参数, 其中对不同类型的协议(TCP,UDP等) 各初始化相对应类型的内存池
 const struct memp_desc* const memp_pools[MEMP_MAX] = {
@@ -112,6 +126,7 @@ memp_init_pool(const struct memp_desc *desc);
 ```
 
 **分配**
+
 ```c
 // do_memp_malloc_pool 从池中拿出一个内存块
 memp = *desc->tab;
@@ -120,6 +135,7 @@ memp->next = NULL;
 ```
 
 **释放**
+
 ```c
 // do_memp_free_pool 将内存块放回内存池中
 memp->next = *desc->tab;
@@ -140,7 +156,9 @@ typedef enum {
   PBUF_POOL
 } pbuf_type;
 ```
+
 **分配**
+
 ```c
 //pbuf_alloc(pbuf_layer layer, u16_t length, pbuf_type type)
 //根据不同层级和数据包大小计算出偏移量, 调用 内存池或堆内存 的内存块, 然后将pbuf内存出开辟出固定大小的内存,并返回pbuf
@@ -150,6 +168,7 @@ p->payload = LWIP_MEM_ALIGN((void *)((u8_t *)p + (SIZEOF_STRUCT_PBUF + offset)))
 ```
 
 **数据包处理**
+
 ```c
 /**文件 drv_eth.c  eth_dev_rx(rt_device_t dev)
  * 该方法用于接收网卡的数据包, 申请内存块, 和 payload 赋值过程
@@ -162,6 +181,7 @@ gmac_rx_buf_attach(net_dev->gmac_id, (uint8 *)new_p->payload);
 ```
 
 **释放**
+
 ```c
 //pbuf_alloc 在申请内存的时候将memp 类型强转成pbuf
 p = (struct pbuf *)memp_malloc(MEMP_PBUF_POOL);

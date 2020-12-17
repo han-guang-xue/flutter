@@ -2,6 +2,9 @@
  
  nmcli 网卡管理命令
 
+发包
+tcpreplay -i enp4s0 -P t3.pcapng
+
 抓包
 tcpdump -i any tcp -w /test/test.cap
 

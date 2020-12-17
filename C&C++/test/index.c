@@ -1,17 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
-typedef struct
-{
-    char *a;
-    char b;
-    int c;
-} stu;
+char * test() {
+   
+   char *p = "456";
+   printf("%d \n", sizeof(p));
+   return p;
+}
+
 int main(int argc, char const *argv[])
 {
-   stu stu1;
-   char *a = "abc";
-   stu1.a = a;
-    printf("%s", stu1.a);
+   printf("%s", test());
 }
 
 
