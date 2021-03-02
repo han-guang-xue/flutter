@@ -15,7 +15,14 @@
         "*.wxss": "css",
         "*.wxs": "javascript",
         "cmath": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "string.h": "c",
+        "windows.h": "c",
+        "limits": "c",
+        "type_traits": "c",
+        "cstdlib": "c",
+        "typeinfo": "c",
+        "conio.h": "c"
     },
     "cmake.configureOnOpen": true
 }
