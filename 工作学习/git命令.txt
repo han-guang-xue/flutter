@@ -1,5 +1,25 @@
 
-# git 命令
+v10.16.0
+
+本地: 114.221.84.208  
+上海: 111.229.248.28  ShiFang1!123456
+
+ss5, 不支持二级代理, 支持scoket代理, liunx
+squid, 支持二级代理, 不支持scoket协议, liunx
+mitmproxy, 支持scoket协议, 暂时不确定二级代理是否支持scoket, liunx
+CCProxy, 支持scoket协议, 支持http,https,scoket5 二级代理, win
+
+/etc/rc.d/init.d
+/etc/opt/ss5
+
+netstat -ap
+netstat -apn |grep 8085
+ps -aux | grep ss5
+
+##liunx 双网卡路由添加
+route add -net 192.168.2.68 netmask 255.255.255.255 gw 192.168.2.1 enp8s0
+## windows10,  9 是网卡的序号
+route add 117.60.62.200 mask 255.255.255.255 192.168.2.1 if 9
 
 111.229.248.28
 192.168.2.23

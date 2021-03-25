@@ -24,5 +24,6 @@
         "typeinfo": "c",
         "conio.h": "c"
     },
+    "editor.formatOnSave": true,
     "cmake.configureOnOpen": true
 }
