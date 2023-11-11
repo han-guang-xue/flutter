@@ -14,4 +14,6 @@ double 占 8 个字节 64 位，取值范围为 1.797693e+308~ 4.9000000e-324
 
 char 占 2 个字节 16 位，取值范围为 0 ～ 65535
 
+test 
+
 boolean 即 true 或 false, 不同虚拟机, 对 boolean 和 boolean 数组的存储长度都不同, eg: 在 Oracle 的 Java 虚拟机实现中，Java 编程语言中的 boolean 数组被编码为 Java 虚拟机 byte 数组，每个布尔元素使用 8 位。
